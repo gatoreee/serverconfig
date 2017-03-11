@@ -2,7 +2,7 @@
 Project: Server Configuration - [Enrique B]
 ================================
 
-Required Libraries and Dependencies
+Info, setup and configuration
 -----------------------------------
 The project presents an online guitar catalog. It uses SQLite, Python and Bootstap and allows users to log-in with their fb or google+ accounts. It is hosted using Amazon Lightsail and can be found at: http://http://52.55.87.238/
 
