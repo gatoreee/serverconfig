@@ -1,0 +1,101 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row">
+		<div class ="col-md-12 flash">
+			{% with messages = get_flashed_messages() %}
+      			{% if messages %}  
+        		<ul>
+        			{% for message in messages %}
+            		<li> <strong> {{ message }} </strong> </li>
+        			{% endfor %}
+        		</ul>
+        		{% endif %}
+    		{% endwith %}
+    	</div>
+	</div>
+
+
+	<div class="row divider yellow">
+		<div class="col-sm-12"></div>
+	</div>
+	<div class="row banner main">
+		<div class "col-sm-12">
+			<div class="row banner-menu">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-8">
+					<h1>Guitar Catalog</h1>
+				</div>
+						
+				<div class="col-sm-3 padding-top text-right">
+					{%if 'username' in session %}
+					<a href="{{ url_for('new_item') }}">
+						<button class="btn btn-default btn-sm" id="new-item">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add Item
+						</button>
+					</a>
+					{% endif %}
+				</div>
+			</div>
+			<div class ="row category-menu">
+				<div class="col-sm-4 category">
+					<a href="{{ url_for('show_items', category_name='Acoustics') }}">
+						<button class="btn btn-default btn-lg btn-block">
+							Acoustics
+						</button>
+					</a>
+				</div>
+				<div class="col-sm-4 category">
+					<a class="no-underline" href="{{ url_for('show_items', category_name='Electrics') }}">			
+						<button class="btn btn-default btn-lg btn-block">
+							Electrics
+						</button>
+					</a>
+				</div>
+				<div class="col-sm-4 category">
+					<a href="{{ url_for('show_items', category_name='Basses') }}">
+						<button class="btn btn-default btn-lg btn-block">
+							Basses
+						</button>
+					</a>
+				</div>
+			</div>
+			<div class ="row category-menu">
+				<div class="col-sm-4 category">
+					<a href="{{ url_for('show_items', category_name='Classicals') }}">
+						<button class="btn btn-default btn-lg btn-block">
+							Classicals
+						</button>
+					</a>
+				</div>
+				<div class="col-sm-4 category">			
+					<a href="{{ url_for('show_items', category_name='Amplifiers') }}">
+						<button class="btn btn-default btn-lg btn-block">
+							Amplifiers
+						</button>
+					</a>
+				</div>
+				<div class="col-sm-4 category">
+					<a href="{{ url_for('show_items', category_name='Effects') }}">
+						<button class="btn btn-default btn-lg btn-block">
+							Effects
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			{% for item in items %}
+			<div class="row">
+				<div class="col-md-12 guitar-list">
+					<a href = "{{ url_for('show_item', category_name=item.category.name, item_name = item.name) }}">
+						<h3>{{ item.name }}</h3>
+					</a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>	
+	</div>
+{% endblock %}
