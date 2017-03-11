@@ -4,7 +4,7 @@ Project: Server Configuration - [Enrique B]
 
 Info, setup and configuration
 -----------------------------------
-The project presents an online guitar catalog. It uses SQLite, Python and Bootstap and allows users to log-in with their fb or google+ accounts. It is hosted using Amazon Lightsail and can be found at: http://http://52.55.87.238/
+The project presents an online guitar catalog. It uses SQLite, Python and Bootstap and allows users to log-in with their fb or google+ accounts. It is hosted using Amazon Lightsail and can be found at: http://52.55.87.238/
 
 The server usues Ubuntu, Apache2 webserver, and Postgres for DB. In order to prep and configure the environment I had to:
 - configure server to only accept ports 80,2200,123
